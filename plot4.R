@@ -80,13 +80,17 @@ plot(datlist, traced, type = "n",xlab ="", ylab = "Global Active Power", axes = 
 lines(datlist, traced, type = "l")
 axis(side = 1, at = c(datlist[1]-1, datlist[length(datlist)/2], datlist[length(datlist)]),
      labels = c("Thu", "Fri", "Sat"))
+axis(side = 2, at = c(0, 2, 4, 6), labels = c(0, 2, 4, 6))
 box()
 
 
 plot(adatlist, atraced, type = "n",xlab ="datetime", ylab = "Voltage", axes = F)
 lines(adatlist, atraced, type = "l")
 axis(side = 1, at = c(adatlist[1]-1, adatlist[length(adatlist)/2], adatlist[length(adatlist)]),
-     labels = c("Thu", "Fri", "Sat"))
+    labels = c("Thu", "Fri", "Sat"))
+axis(side = 2, at = c(234, 236, 238, 240, 242, 244, 246), labels = c(234, NA , 238,
+    NA, 242, NA, 246))
+
 box()
 
 
@@ -107,15 +111,17 @@ box()
 legend("topright", legend = c("Sub_metering_1", "Sub_metering_2",
                               "Sub_metering_3"),
        col = c("black", "red", "blue"),
-       xjust = 0, lty = 1, cex = .5 ,bty = "n")
+       xjust = 0, lty = 1, cex = .6 ,bty = "n")
 
 
 plot(bdatlist, btraced, type = "n",xlab ="datetime", ylab = "Global_reactive_power", axes = F)
 lines(bdatlist, btraced, type = "l")
 axis(side = 1, at = c(bdatlist[1]-1, bdatlist[length(bdatlist)/2], bdatlist[length(bdatlist)]),
      labels = c("Thu", "Fri", "Sat"))
+axis(side = 2, at = c(0, 0.1, 0.2, 0.3, 0.4, 0.5), labels = c("0.0", "0.1", "0.2", "0.3", "0.4",
+    "0.5"))
 box()
-
+par(cex.axis = .7)
 
 dev.copy(png, file = "plot4")
 dev.off()
