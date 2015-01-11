@@ -121,7 +121,7 @@ axis(side = 1, at = c(bdatlist[1]-1, bdatlist[length(bdatlist)/2], bdatlist[leng
 axis(side = 2, at = c(0, 0.1, 0.2, 0.3, 0.4, 0.5), labels = c("0.0", "0.1", "0.2", "0.3", "0.4",
     "0.5"))
 box()
-par(cex.axis = .7)
+par(cex.axis = .5)
 
 dev.copy(png, file = "plot4")
 dev.off()
